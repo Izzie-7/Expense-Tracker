@@ -1,0 +1,23 @@
+@media screen and (max-width: 600px) {
+  .header_Subcontainer {
+    width: 92%;
+  }
+  .main .main_Subcontainer {
+    width: 92%;
+  }
+  .Search_InputContainer,
+  .filter_Container {
+    width: 100%;
+  }
+  .head_Logo {
+    font-size: 22px;
+  }
+  .Transaction_Form_Section .form_Main {
+    width: 85%;
+    margin-top: 20px;
+  }
+
+  .submit_Container button {
+    font-size: 14px;
+  }
+}

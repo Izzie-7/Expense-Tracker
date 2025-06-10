@@ -1,0 +1,503 @@
+:root {
+  --bg-primary: #f8f9fc;
+  --bg-secondary: #ffffff;
+  --text-primary: #333344;
+  --text-secondary: #666677;
+  --text-muted: #8888aa;
+  --border-color: #e2e8f0;
+  --primary-color: #6366f1;
+  --secondary-color: #e2e8f0;
+  --income-color: #10b981;
+  --expense-color: #ef4444;
+}
+.dark-mode {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --border-color: #374151;
+  --primary-color: #818cf8;
+  --secondary-color: #374151;
+  --income-color: #34d399;
+  --expense-color: #f87171;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  transition: 0.3s;
+}
+.cardShadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.income {
+  color: var(--income-color);
+}
+.expense {
+  color: var(--expense-color);
+}
+#income {
+  color: var(--income-color);
+}
+#expense {
+  color: var(--expense-color);
+}
+.hidden {
+  display: none;
+}
+
+/* Beginning of Header Div section */
+.header {
+  /* border: 1px solid red; */
+  padding: 15px 5px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+}
+.header_Subcontainer {
+  width: 85%;
+  /* border: 1px solid var(--primary-color); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1330px;
+}
+.head_Logo {
+  font-size: 29px;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  color: var(--text-primary);
+}
+.add_Transaction_Div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.modeIcon_Container {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+.modeIcon {
+  height: 18px;
+}
+.add_Transaction_btn {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  gap: 10px;
+  text-transform: capitalize;
+  color: #f3f4f6;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+.add_Transaction_btn .addIcon {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* End of the Header Div */
+
+/* Beginning of the Main Div section */
+.main {
+  display: flex;
+  justify-content: center;
+  height: calc(100svh - 120px);
+}
+.main .main_Subcontainer {
+  width: 85%;
+  height: 100%;
+  max-width: 1337px;
+}
+/* Beginning of Expense Card */
+.expense_Summarys {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid orange; */
+  flex-wrap: wrap;
+}
+.expense_Summarys .expense_card {
+  flex: 1;
+  height: 130px;
+  padding: 7px 0;
+  border-radius: 15px;
+  background-color: var(--bg-secondary);
+  min-width: 300px;
+  max-width: 400px;
+  transition: transform 0.2s ease-in-out;
+}
+.expense_Summarys .expense_card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+.card_Top {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card_Top .card_Top_Subcontainer {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card_Top_Subcontainer h4 {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+.card_Top_Subcontainer img,
+.SearchIcon {
+  height: 25px;
+  cursor: default;
+}
+
+.card_bottom {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+.card_bottom_Subcontainer {
+  width: 90%;
+  /* border: 1px solid green; */
+  padding: 10px 0;
+}
+.card_bottom_Subcontainer h2 {
+  font-size: 32px;
+  transform: translateY(1px);
+  font-weight: 700;
+  font-family: sans-serif;
+}
+.card-Naria {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+.card-Naria .nariaIcon {
+  height: 17px;
+}
+.NGN {
+  height: 34px;
+}
+.flexCenter {
+  display: flex;
+  align-items: center;
+}
+.card-Naria .DOLS {
+  margin: 0 5px;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+.card-Naria div {
+  color: #9ca3af;
+}
+.card-Naria .value {
+  font-size: 16px;
+  font-family: sans-serif;
+  transform: translateY(1px);
+}
+.NGN.incomeGreen,
+.value.incomeGreen {
+  color: #34d399;
+}
+/* End of Expense Card */
+/* Beginning of the transaction History section */
+.transaction_History_Section {
+  /* border: 1px solid Green; */
+  /* height: 60%; */
+  margin: 30px 0;
+  border-radius: 15px;
+  background-color: var(--bg-secondary);
+  padding: 15px 0;
+}
+
+.transaction_History_Section .transaction_Head {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+.transaction_Head h2 {
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-weight: 600;
+  font-family: sans-serif;
+  text-transform: capitalize;
+}
+.transaction_Main {
+  padding: 10px 20px;
+  display: flex;
+  height: 80%;
+  /* justify-content: center; */
+}
+.transaction_Main .transaction_Main_Subcontainer {
+  height: 100%;
+  width: 100%;
+}
+
+.Search_Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+.Search_InputContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  justify-content: center;
+  width: auto;
+  width: 65%;
+  padding: 0 5px;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+.Search_InputContainer input {
+  width: 90%;
+  padding: 12px 16px;
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+.Search_InputContainer:focus-within {
+  border-color: #6366f1;
+}
+.Search_InputContainer input:focus {
+  outline: none;
+}
+.Search_InputContainer input::placeholder {
+  font-size: 15px;
+}
+.filter_Container {
+  width: 65%;
+  margin-top: 5px;
+  display: flex;
+  gap: 15px;
+}
+.filter_Container .Search_Select {
+  flex: 1;
+  padding: 12px 16px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: sans-serif;
+  font-size: 15px;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+  appearance: none;
+  cursor: pointer;
+}
+.filter_Container .Search_Select:focus {
+  border-color: #6366f1;
+  outline: none;
+}
+.filter_Container .Search_Select option {
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+}
+.transaction_HistoryTable {
+  width: 100%;
+  overflow-x: auto;
+  min-width: 100%;
+}
+.transactionTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.transaction_HistoryTable tr th {
+  color: var(--text-secondary);
+  font-family: sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.TransactionsHistory tr td {
+  padding: 20px 16px;
+  color: var(--text-secondary);
+  text-align: center;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+.TransactionsHistory .row1 td {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.delete img {
+  height: 20px;
+  cursor: pointer;
+}
+
+/* End of the transaction History section */
+
+/* End of the Main Div section */
+
+/* Beginning of the tranaction form  */
+
+.Transaction_Form_Section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100svh;
+  z-index: 2;
+}
+.Transaction_Form_Section .transaction_Form_Subcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: inherit;
+}
+.Transaction_Form_Section .form_Main {
+  width: 45%;
+  max-width: 500px;
+  padding: 8px 15px;
+  height: auto;
+  background: var(--bg-secondary);
+}
+.form_Main .form_Head {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+#naria_amount {
+  margin-top: 10px;
+}
+.form_Main .form_Head h3 {
+  color: var(--text-primary);
+  font-size: 22px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+.form_Main .form_Head button {
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  background: none;
+  padding: 5px;
+  cursor: pointer;
+  color: var(--text-primary);
+  transform: rotate(45deg);
+}
+.transaction_Type {
+  display: flex;
+  justify-content: center;
+}
+.transaction_Type div {
+  width: 95%;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  height: 35px;
+}
+.transaction_Type div .typeBtn {
+  flex: 1;
+  border-radius: 8px;
+  background-color: var(--secondary-color);
+  color: var(--text-primary);
+  padding: 8px 0;
+  text-transform: capitalize;
+  border: none;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.transaction_Type div .active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.form_Main .form_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.form_container form {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.form_container .transaction_InputContainer {
+  width: 100%;
+  /* border: 1px solid red; */
+}
+.transaction_InputContainer input,
+.transaction_InputContainer select {
+  box-sizing: border-box;
+  padding: 12px 10px;
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  transition: 0.2s;
+  font-family: sans-serif;
+}
+.transaction_InputContainer input:focus,
+.transaction_InputContainer select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+.transaction_InputContainer p {
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.form_container form .Btn_container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-top: 30px;
+}
+form .Btn_container .submit_Container {
+  display: flex;
+  gap: 15px;
+}
+
+.submit_Container button,
+.submit_Container div {
+  padding: 10px 20px;
+  border: none;
+  font-size: 17px;
+  font-family: sans-serif;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.submitBtn {
+  background-color: var(--primary-color);
+  color: white;
+}
+.cancelBtn {
+  background: var(--secondary-color);
+  color: var(--text-primary);
+}

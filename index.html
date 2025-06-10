@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/Responsiveness.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header_Subcontainer">
+        <div class="head_Logo">expense tracker</div>
+        <div class="add_Transaction_Div">
+          <div class="modeIcon_Container" id="modeButton">
+            <img
+              src="images/Sun.png"
+              alt="light/night icon"
+              class="modeIcon"
+              id="modeIcon"
+            />
+          </div>
+          <button class="add_Transaction_btn" id="openAddTransaction">
+            <div class="addIcon">&plus;</div>
+            add transaction
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="main_Subcontainer">
+        <div class="expense_Summarys">
+          <div class="expense_card cardShadow">
+            <div class="card_Top">
+              <div class="card_Top_Subcontainer">
+                <h4>total income</h4>
+                <img
+                  src="images/icons8-up-arrow-48.png"
+                  alt="arrow up"
+                  class="cardImg"
+                />
+              </div>
+            </div>
+            <div class="card_bottom">
+              <div class="card_bottom_Subcontainer">
+                <div class="flexCenter">
+                  <img src="images/Green-Naria.png" alt="" class="NGN" />
+                  <h2 class="income" id="display_Income">0.00</h2>
+                </div>
+                <div class="card-Naria">
+                  <img
+                    src="images/dollar.png"
+                    alt="nariaIcon"
+                    class="nariaIcon"
+                  />
+                  <div id="income_Naria" class="value">0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="expense_card cardShadow">
+            <div class="card_Top">
+              <div class="card_Top_Subcontainer">
+                <h4>total expense</h4>
+                <img
+                  src="images/icons8-down-arrow-48.png"
+                  alt="arrow down"
+                  class="cardImg"
+                />
+              </div>
+            </div>
+            <div class="card_bottom">
+              <div class="card_bottom_Subcontainer">
+                <div class="flexCenter">
+                  <img src="images/Red-Naria.png" alt="" class="NGN" />
+                  <h2 class="expense" id="display_Expense">0.00</h2>
+                </div>
+                <div class="card-Naria">
+                  <img
+                    src="images/dollar.png"
+                    alt="nariaIcon"
+                    class="nariaIcon"
+                  />
+                  <div id="expense_Naria" class="value">0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="expense_card cardShadow">
+            <div class="card_Top">
+              <div class="card_Top_Subcontainer">
+                <h4>current balance</h4>
+                <img
+                  src="images/icons8-dollar-sign-48.png"
+                  alt="arrow down"
+                  class="cardImg"
+                />
+              </div>
+            </div>
+            <div class="card_bottom">
+              <div class="card_bottom_Subcontainer">
+                <div class="flexCenter">
+                  <img src="images/Green-Naria.png" alt="" class="NGN" />
+                  <h2 class="income" id="currentBalance">0.00</h2>
+                </div>
+                <div class="card-Naria">
+                  <img
+                    src="images/current-balance-Dollar.png"
+                    alt="nariaIcon"
+                    class="nariaIcon"
+                  />
+                  <div class="value incomeGreen" id="currentBalance_Naria">
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="transaction_History_Section cardShadow">
+          <div class="transaction_Head">
+            <h2>transaction history</h2>
+          </div>
+          <div class="transaction_Main">
+            <div class="transaction_Main_Subcontainer">
+              <div class="Search_Container">
+                <div class="Search_InputContainer">
+                  <img
+                    src="images/magnifying-glass.svg"
+                    alt="SearchIcon"
+                    class="SearchIcon"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Search transaction"
+                    id="SearchInput"
+                  />
+                </div>
+                <div class="filter_Container">
+                  <select
+                    name=""
+                    id="filterTransaction_BYCategories"
+                    class="Search_Select"
+                  >
+                    <option value="">All Categories</option>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Education">Education</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Health">Health</option>
+                    <option value="Others">Others</option>
+                  </select>
+                  <select name="" id="" class="Search_Select">
+                    <option value="">All Months</option>
+                    <option value="march">March</option>
+                    <option value="aprils">April</option>
+                  </select>
+                </div>
+              </div>
+              <div class="transaction_HistoryTable">
+                <table class="transactionTable">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Description</th>
+                      <th>Category</th>
+                      <th>Amount(NGN)</th>
+                      <th>Amount(Dollar)</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="TransactionsHistory">
+                    <tr id="no_Transaction">
+                      <td colspan="6">
+                        No transactions found. Add a transaction to get started
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Transaction_Form_Section hidden" id="AddTransactionSection">
+      <div class="transaction_Form_Subcontainer">
+        <div class="form_Main cardShadow">
+          <div class="form_Head">
+            <h3>Add Transaction</h3>
+            <button class="closeAddTransaction">+</button>
+          </div>
+          <div class="transaction_Type">
+            <div>
+              <button class="typeBtn active">income</button>
+              <button class="typeBtn">expense</button>
+            </div>
+          </div>
+          <div class="form_container">
+            <form action="" id="AddTrasactionForm">
+              <div class="transaction_InputContainer">
+                <p>amount</p>
+                <input
+                  type="number"
+                  name="amount"
+                  class="AddTransactionInput"
+                  id="amountInput"
+                  required
+                />
+                <p id="naria_amount"></p>
+              </div>
+              <div class="transaction_InputContainer">
+                <p>description</p>
+                <input
+                  type="text"
+                  name="description"
+                  class="AddTransactionInput"
+                  required
+                />
+              </div>
+              <div class="transaction_InputContainer">
+                <p>category</p>
+                <select type="text" name="category">
+                  <option value="Food">Food</option>
+                  <option value="Transport">Transport</option>
+                  <option value="Shopping">Shopping</option>
+                  <option value="Bills">Bills</option>
+                  <option value="Education">Education</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Health">Health</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+              <div class="transaction_InputContainer">
+                <p>date</p>
+                <input
+                  type="date"
+                  name="date"
+                  class="AddTransactionInput"
+                  required
+                />
+              </div>
+              <div class="Btn_container">
+                <div class="submit_Container">
+                  <div class="cancelBtn closeAddTransaction">Cancel</div>
+                  <button type="submit" class="submitBtn">
+                    Add Transaction
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
